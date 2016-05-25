@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Teste de polídromo</title>
+    <script src="http://diegosousa.net/jquery/jquery-1.10.2.min.js"></script>
+    <script>
+    var palavra;
+    $(document).ready(function () { 
+    $("#validar-palavra").click(function () {
+        palavra = $("#texto_palavra").val();
+        if(palavra.split(' ').join('')==tudo_reverso(palavra).split(' ').join('')){
+            $("#resultado").text("É um Palindromo");
+        }else{
+            $("#resultado").text("Não é um palindromo");
+        }
+    });
+    });
+    function tudo_reverso (palavra) {
+        var reverso="";
+        for (var i = palavra.length; 0 < i  ; i--) {
+                reverso+=palavra[i-1];
+        };
+        return reverso;
+    }
+    </script>
+</head>
+<body>
+
+<input type="text" id="texto_palavra" value="ivan"/>
+<button id="validar-palavra">Validar palavra</button>
+<p id="resultado"></p>
+    
+</body>
+</html>
